@@ -11,7 +11,7 @@ function add(a, b) {
     }
     return a + b;
 }
-console.log(add("Frank", "Smith"));
+console.log(add("Frank", "Bouchard"));
 console.log(add(1, 2));
 function printEmployeeInformation(emp) {
     console.log(`Name: ${emp.name}`);
@@ -59,3 +59,19 @@ function moveAnimal(animal) {
     console.log(`${animal.type} is moving with speed: ${speed}`);
 }
 moveAnimal({ type: "bird", flyingSpeed: 10 });
+const buttonElement = document.querySelector("button");
+buttonElement.addEventListener("click", () => {
+    console.log("Button clicked!");
+    userInputElement.value = "Clicked!";
+    paragraph.innerText = "Clicked!";
+});
+const paragraph = document.querySelector("p");
+paragraph.innerText = "Hi there!";
+const userInputElement = document.getElementById("user-input");
+userInputElement.value = "Hi there!";
+const errorBag = {
+    name: "Must start with a capital character!",
+    email: "Not a valid email!",
+    password: "Must be at least 6 characters long!",
+    repeatPassword: "Passwords must match!",
+};

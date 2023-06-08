@@ -22,6 +22,9 @@ console.log(e1);
 type Combinable = string | number;
 type Numeric = number | boolean;
 
+// Function Overloads
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
 function add(a: Combinable, b: Combinable) {
   // Type Guard
   if (typeof a === "string" || typeof b === "string") {
@@ -29,7 +32,8 @@ function add(a: Combinable, b: Combinable) {
   }
   return a + b;
 }
-console.log(add("Frank", "Smith"));
+
+console.log(add("Frank", "Bouchard"));
 console.log(add(1, 2));
 
 type UnknownEmployee = Employee | Admin;
@@ -111,4 +115,27 @@ function moveAnimal(animal: Animal) {
 moveAnimal({ type: "bird", flyingSpeed: 10 });
 
 // * Type Casting
-// * Function Overloads
+const buttonElement = document.querySelector("button") as HTMLButtonElement;
+buttonElement.addEventListener("click", () => {
+  console.log("Button clicked!");
+  userInputElement.value = "Clicked!";
+  paragraph.innerText = "Clicked!";
+});
+
+const paragraph = document.querySelector("p") as HTMLParagraphElement;
+paragraph.innerText = "Hi there!";
+
+const userInputElement = document.getElementById("user-input") as HTMLInputElement;
+userInputElement.value = "Hi there!";
+
+// * Index Properties
+interface ErrorContainer {
+  [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+  name: "Must start with a capital character!",
+  email: "Not a valid email!",
+  password: "Must be at least 6 characters long!",
+  repeatPassword: "Passwords must match!",
+};
