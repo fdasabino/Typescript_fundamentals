@@ -1,27 +1,19 @@
 "use strict";
-class Department {
-    id;
+class Person {
     name;
-    employees = [];
-    constructor(id, name) {
-        this.id = id;
+    age = 33;
+    constructor(name) {
         this.name = name;
     }
-    describe() {
-        console.log("Department: " + this.name);
-        console.log("Department ID: " + this.id);
-    }
-    addEmployee(employee) {
-        this.employees.push(employee);
-    }
-    printEmployeeInformation() {
-        console.log("Number of employees: ", this.employees.length);
-        console.log("Employees list: ", this.employees);
+    greet(phrase) {
+        console.log(`${phrase} ${this.name}`);
     }
 }
-const accounting = new Department("Acc", "Accounting");
-accounting.addEmployee("Max");
-accounting.addEmployee("Manuel");
-accounting.describe();
-accounting.printEmployeeInformation();
-console.log(accounting);
+let user1;
+user1 = {
+    name: "Frank",
+    greet(phrase) {
+        console.log(`${phrase} ${this.name}`);
+    },
+};
+user1.greet("Hi there, I am");
